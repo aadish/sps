@@ -122,3 +122,22 @@ class Loan(models.Model):
     type = models.ForeignKey(LoanType)
     subtype = models.ForeignKey(LoanSubType)
     amount = models.FloatField()
+
+
+class ExpectedReceipt(models.Model):
+    expected_savings = models.FloatField()
+    expected_general_principle = models.FloatField()
+    expected_general_interest = models.FloatField()
+    expected_special_principle = models.FloatField()
+    expected_special_loan = models.FloatField()
+
+
+class ActualReceipt(models.Model):
+    fixed_deposit_saving = models.FloatField()
+    regular_saving = models.FloatField()
+    insurance_premium_paid = models.FloatField()
+    fees = models.FloatField()
+    general_principle = models.FloatField()
+    general_interest = models.FloatField()
+    special_principle = models.FloatField()
+    special_interest = models.FloatField()
