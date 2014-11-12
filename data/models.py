@@ -112,10 +112,16 @@ class SHGProgram(models.Model):
 class LoanType(models.Model):
     type_name = models.CharField(max_length=100)
 
+    def __unicode__(self):
+        return self.type_name
+
 
 class LoanSubType(models.Model):
     subtype_name = models.CharField(max_length=100)
     type = models.ForeignKey(LoanType)
+
+    def __unicode__(self):
+        return self.subtype_name
 
 
 class Loan(models.Model):
